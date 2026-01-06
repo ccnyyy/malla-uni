@@ -1,1 +1,115 @@
+/* PALETA BASE */
+:root{
+  --bg:#D4C8DC;
+  --card:#FEFEFE;
+  --semester:#D3C8DB;
+  --semester-text:#807785;
 
+  --free:#A79FB7;
+  --free-text:#6D6978;
+
+  --pending:#CCC2C0;
+  --approved:#8C6879;
+
+  --tfl:#B89FB1;          /* certificación TFL */
+  --related:#B7AEC6;      /* ramos relacionados */
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  font-family:'Nunito', sans-serif;
+  background:var(--bg);
+}
+
+header{
+  text-align:center;
+  padding:24px 16px 8px;
+}
+
+header h1{
+  margin:0 0 6px;
+  color:var(--semester-text);
+  font-weight:700;
+}
+
+header p{
+  margin:0;
+  color:#6f6877;
+  font-size:.9rem;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+  padding:20px;
+}
+
+.semester{
+  background:var(--card);
+  border-radius:22px;
+  padding:14px;
+}
+
+.semester-title{
+  background:var(--semester);
+  color:var(--semester-text);
+  text-align:center;
+  padding:8px 6px;
+  border-radius:18px;
+  font-weight:700;
+  margin-bottom:12px;
+}
+
+.course{
+  padding:10px 12px;
+  border-radius:16px;
+  margin-bottom:8px;
+  cursor:pointer;
+  font-size:.85rem;
+  transition:.2s ease;
+}
+
+.course.free{
+  background:var(--free);
+  color:var(--free-text);
+}
+
+.course.pending{
+  background:var(--pending);
+  color:#6D6978;
+}
+
+.course.approved{
+  background:var(--approved);
+  color:#fff;
+  text-decoration:line-through;
+}
+
+.course.locked{
+  opacity:.45;
+  cursor:not-allowed;
+}
+
+.course.tfl::after{
+  content:" TFL";
+  font-size:.65rem;
+  background:var(--tfl);
+  color:#fff;
+  padding:2px 6px;
+  border-radius:10px;
+  margin-left:6px;
+}
+
+.course.related{
+  box-shadow:inset 0 0 0 2px var(--related);
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  font-size:.75rem;
+  color:#6f6877;
+}
