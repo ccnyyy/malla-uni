@@ -1,9 +1,9 @@
-// ================= DATOS CORREGIDOS SEGÚN PDF (TFL / REQ / REL) =================
+// ================= DATOS DE LA MALLA =================
 const semesters = [
   { sem:'1° Semestre', courses:[
     {id:'formacion',name:'Formación Ciudadana'},
     {id:'ecosistema',name:'Ecosistema Turístico y Patrimonio'},
-    {id:'destinos',name:'Destinos Turísticos y Geografía', related:['diseno_prog'], tfl:true},
+    {id:'destinos',name:'Destinos Turísticos y Geografía', related:['diseno_prog']},
     {id:'info',name:'Información y Orientación Turística'},
     {id:'guiados',name:'Servicios Turísticos Guiados'},
     {id:'datos',name:'Resolución de Problemas en Datos e Información'}
@@ -42,7 +42,7 @@ const semesters = [
     {id:'eng2',name:'English for Tourism and Hospitality 2', req:['eng1']},
     {id:'innov2',name:'Innovación y Emprendimiento 2', tfl:true},
     {id:'patrimonio',name:'Interpretación del Patrimonio', related:['plan_dest'], tfl:true},
-    {id:'prod_sost',name:'Taller Diseño de Productos Turísticos Sostenibles', req:['exp_sost'], tfl:true}
+    {id:'prod_sost',name:'Taller Diseño de Productos Turísticos Sostenibles', req:['exp_sost']}
   ]},
 
   { sem:'6° Semestre', courses:[
@@ -60,7 +60,7 @@ const semesters = [
     {id:'electivo3',name:'Electivo Tendencias Sector 3'},
     {id:'impacto',name:'Evaluación Impacto Ecosistema Turístico', req:['regulacion']},
     {id:'marketing',name:'Marketing Estratégico de Servicios'},
-    {id:'calidad',name:'Gestión de Calidad Turística Sostenible', related:['modelos'], tfl:true}
+    {id:'calidad',name:'Gestión de Calidad Turística Sostenible', related:['modelos']}
   ]},
 
   { sem:'8° Semestre', courses:[
@@ -115,28 +115,3 @@ function render(){
     malla.appendChild(sem);
   });
 }
-
-render();
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px){
-  .grid{
-    grid-template-columns:1fr;
-    padding:12px;
-  }
-
-  header h1{
-    font-size:1.1rem;
-  }
-
-  .semester{
-    border-radius:18px;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1200px){
-  .grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
