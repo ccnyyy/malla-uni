@@ -1,79 +1,107 @@
-/* ======================= style.css ======================= */
-font-family: 'Montserrat', sans-serif;
-background: #D4C8DC;
+/* ===== PALETA BASE ===== */
+:root{
+  --bg:#D4C8DC;
+  --semester:#D3C8DB;
+  --semester-text:#807785;
+  --card:#FEFEFE;
+  --free:#A79FB7;
+  --free-text:#6D6978;
+  --pending:#CCC2C0;
+  --approved:#8C6879;
 }
 
+*{box-sizing:border-box;}
 
-h1 {
-text-align: center;
-color: #807785;
+body{
+  margin:0;
+  font-family:'Montserrat', sans-serif;
+  background:var(--bg);
+  color:#5f5a6b;
 }
 
-
-.grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 16px;
-padding: 16px;
+header{
+  text-align:center;
+  padding:24px 12px 8px;
 }
 
-
-.semestre {
-background: #FEFEFE;
-border-radius: 18px;
-padding: 12px;
+header h1{
+  margin:0;
+  font-weight:600;
 }
 
-
-.semestre h2 {
-background: #D3C8DB;
-color: #807785;
-padding: 8px;
-border-radius: 12px;
-text-align: center;
+.subtitle{
+  font-size:.85rem;
 }
 
-
-.ramo {
-margin: 8px 0;
-padding: 8px;
-border-radius: 12px;
-cursor: pointer;
-font-size: 0.9rem;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;
+  padding:20px;
 }
 
-
-.ramo.base {
-background: #A79FB7;
-color: #6D6978;
+.semester{
+  background:var(--card);
+  border-radius:24px;
+  padding:14px;
 }
 
-
-.ramo.bloqueado {
-background: #CCC2C0;
-color: #6D6978;
-cursor: not-allowed;
+.semester-title{
+  background:var(--semester);
+  color:var(--semester-text);
+  text-align:center;
+  padding:8px;
+  border-radius:14px;
+  font-weight:500;
+  margin-bottom:12px;
 }
 
-
-.ramo.aprobado {
-background: #8C6879;
-color: #FEFEFE;
-text-decoration: line-through;
+.course{
+  padding:8px 10px;
+  margin-bottom:8px;
+  border-radius:10px;
+  font-size:.85rem;
+  cursor:pointer;
+  transition:.2s;
 }
 
-
-.badge {
-display: inline-block;
-margin-left: 6px;
-font-size: 0.7rem;
-padding: 2px 6px;
-border-radius: 6px;
-background: #807785;
-color: white;
+.course.pending{
+  background:var(--pending);
 }
 
+.course.free{
+  background:var(--free);
+  color:var(--free-text);
+}
 
-@media (max-width: 600px) {
-h1 { font-size: 1.2rem; }
+.course.locked{
+  opacity:.45;
+  cursor:not-allowed;
+}
+
+.course.tfl::after{
+  content:" • TFL";
+  font-size:.7rem;
+}
+
+.course.related{
+  outline:1px dashed rgba(0,0,0,.15);
+}
+
+.course.approved{
+  background:var(--approved);
+  color:white;
+  text-decoration:line-through;
+}
+
+footer{
+  text-align:center;
+  padding:12px;
+  font-size:.75rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:600px){
+  header h1{font-size:1.1rem;}
+  .grid{padding:12px;}
 }
